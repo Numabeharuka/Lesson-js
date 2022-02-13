@@ -1,6 +1,6 @@
 "use strict";
 
-const li_element = document.createElement("li");
-li_element.textContent = "これです";
-const ul_element = document.querySelector("ul");
-ul_element.appendChild(li_element);
+const lielement = document.createElement("li");
+lielement.textContent = "これです";
+const ulelement = document.querySelector("ul");
+ulelement.appendChild(lielement);
