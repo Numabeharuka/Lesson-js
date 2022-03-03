@@ -1,11 +1,11 @@
 "use strict";
-const ul = document.getElementById("js-target");
+const ul = document.getElementById("js-list");
 const fragment = document.createDocumentFragment();
 const data = [
   { to: "bookmark.html", img: "1.png", alt: "画像1", text: "ブックマーク" },
   { to: "message.html", img: "2.png", alt: "画像2", text: "メッセージ" }
 ];
-for (let i = 0; i <= data.length - 1; i++) {
+for (let i = 0; i < data.length; i++) {
   const li = document.createElement("li");
   const a = document.createElement("a");
   const img = document.createElement("img");
