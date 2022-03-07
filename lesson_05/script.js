@@ -6,7 +6,9 @@ const data = [
   { to: "message.html", img: "2.png", alt: "画像2", text: "メッセージ" }
 ];
 
-const result = new Promise(function (resolve, reject) {
+const promise = new Promise((resolve) => {
+  resolve(data);
+}).then(() => {
   for (let i = 0; i < data.length; i++) {
     const li = document.createElement("li");
     const a = document.createElement("a");
@@ -19,5 +21,5 @@ const result = new Promise(function (resolve, reject) {
       .appendChild(a)
       .insertAdjacentElement("afterbegin", img);
   }
+  ul.appendChild(fragment);
 });
-ul.appendChild(fragment);
