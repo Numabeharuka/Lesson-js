@@ -8,7 +8,7 @@ const data = [
 
 const promise = new Promise((resolve) => {
   resolve(data);
-}).
+});
   promise.then((value) => {
   for (let i = 0; i < value.length; i++) {
     const li = document.createElement("li");
