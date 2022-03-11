@@ -8,14 +8,15 @@ const data = [
 
 const promise = new Promise((resolve) => {
   resolve(data);
-}).then(() => {
-  for (let i = 0; i < data.length; i++) {
+}).then((value) => {
+  for (let i = 0; i < value.length; i++) {
     const li = document.createElement("li");
     const a = document.createElement("a");
     const img = document.createElement("img");
-    a.href = data[i].to;
-    a.text = data[i].text;
-    img.alt = data[i].alt;
+    a.href = value[i].to;
+    a.text = value[i].text;
+    img.src = value[i].img
+    img.alt = value[i].alt;
     fragment
       .appendChild(li)
       .appendChild(a)
