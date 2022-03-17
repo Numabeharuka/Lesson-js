@@ -1,16 +1,15 @@
 "use strict";
 const ul = document.getElementById("js-list");
-const data = [
+const getData = new Promise((resolve) => {
+  const data = [
   { to: "bookmark.html", img: "1.png", alt: "画像1", text: "ブックマーク" },
   { to: "message.html", img: "2.png", alt: "画像2", text: "メッセージ" }
 ];
-
-const data = new Promise((resolve) => {
   setTimeout(() => {
     resolve(data);
   }, 3000);
 });
-data.then((value) => {
+getData.then((value) => {
   const fragment = document.createDocumentFragment();
   for (let i = 0; i < value.length; i++) {
     const li = document.createElement("li");
