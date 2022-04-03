@@ -7,9 +7,6 @@ const addLoading = () => {
   loading.appendChild(gif);
 };
 
-// ローディング消す
-const removeLoading = () => document.getElementById("js-loading").remove();
-
 const ul = document.getElementById("js-list");
 const getData = new Promise((resolve) => {
   addLoading();
@@ -19,10 +16,11 @@ const getData = new Promise((resolve) => {
   ];
   setTimeout(() => {
     resolve(data);
-  }, 4000);
+  }, 3000);
 });
 getData.then((value) => {
-  removeLoading();
+  // ローディング消す
+  const removeLoading = () => document.getElementById("js-loading").remove();
   const fragment = document.createDocumentFragment();
   for (let i = 0; i < value.length; i++) {
     const li = document.createElement("li");
@@ -35,7 +33,8 @@ getData.then((value) => {
     fragment
       .appendChild(li)
       .appendChild(a)
-      .insertAdjacentElement("afterbegin", img);
+      .appendChild(img);
   }
+  removeLoading();
   ul.appendChild(fragment);
 });
