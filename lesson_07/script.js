@@ -1,13 +1,14 @@
 "use strict";
 // ローディング作る
-const addLoading = () => {
+  const addLoading = () => {
   const loading = document.getElementById("js-loading");
   const gif = document.createElement("img");
   gif.src = "loading-circle.gif";
   loading.appendChild(gif);
 };
+  // ローディング消す
+  const removeLoading = () => document.getElementById("js-loading").remove();
 
-const ul = document.getElementById("js-list");
 const getData = new Promise((resolve) => {
   addLoading();
   const data = [
@@ -18,9 +19,9 @@ const getData = new Promise((resolve) => {
     resolve(data);
   }, 3000);
 });
+
 getData.then((value) => {
-  // ローディング消す
-  const removeLoading = () => document.getElementById("js-loading").remove();
+  const ul = document.getElementById("js-list");
   const fragment = document.createDocumentFragment();
   for (let i = 0; i < value.length; i++) {
     const li = document.createElement("li");
