@@ -1,4 +1,9 @@
 "use strict";
+const ul = document.getElementById("js-list");
+const newElement = document.createElement("div");
+newElement.id = "js-loading";
+ul.before(newElement);
+
 // ローディング作る
 const addLoading = () => {
   const loading = document.getElementById("js-loading");
