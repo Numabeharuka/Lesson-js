@@ -1,12 +1,11 @@
 "use strict";
-const ul = document.getElementById("js-list");
 // ローディング作る
 const addLoading = () => {
   const newElement = document.createElement("div");
   const gif = document.createElement("img");
   newElement.id = "js-loading";
   gif.src = "loading-circle.gif";
-  ul.appendChild(newElement).appendChild(gif);
+  document.body.appendChild(newElement).appendChild(gif);
 };
 // ローディング消す
 const removeLoading = () => document.getElementById("js-loading").remove();
@@ -39,7 +38,7 @@ getData
     }
     removeLoading();
     ul.appendChild(fragment);
-  })
-  .catch((error) => {
-     console.error();
+  });
+  getData.catch((error) => {
+     console.error(error);
   });
