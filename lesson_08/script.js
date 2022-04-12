@@ -17,7 +17,6 @@ const getData = new Promise((resolve, reject) => {
     { to: "message.html", img: "2.png", alt: "画像2", text: "メッセージ" }
   ];
   setTimeout(() => {
-    resolve();
     reject("error");
   }, 3000);
 });
